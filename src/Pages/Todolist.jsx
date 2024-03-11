@@ -33,7 +33,7 @@ const Todolist = () => {
             <div className="flex items-center justify-center w-full font-sans h-100 bg-teal-lightest">
                 <div className="w-full p-6 m-4 bg-white rounded shadow lg:w-3/4 lg:max-w-4xl">
                     <div className="mb-4">
-                        <h1 className="text-6xl font-bold text-center text-grey-darkest">Day Goals!</h1>
+                        <h1 className="text-4xl font-bold text-center lg:text-6xl text-grey-darkest">Day Goals!</h1>
                         <div className="flex gap-2 mt-4">
                             <input
                                 className="w-full px-3 py-2 leading-tight text-gray-700 border border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:shadow-outline"
