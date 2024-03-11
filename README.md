@@ -1,4 +1,4 @@
-# TodoList
+# TodoApp
 
 
 ### Techstack 
@@ -10,4 +10,5 @@
 6. Testing => jest
 
 
-
+### Hosting
+Netlify : https://todolistpraveen.netlify.app
