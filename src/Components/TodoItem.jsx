@@ -9,12 +9,12 @@ const TodoItem = ({ todo, todotext, setShowErrorMessage }) => {
 
     const dispatch = useDispatch()
     return (
-        <div className="flex mb-4 items-center">
+        <li className="flex items-center p-3 m-2 mb-4 border rounded shadow-md">
             <p className="w-full text-grey-darkest">
                 {`${item} (Updated ${updatedCount} Times)`}
             </p>
             <button
-                className="flex-none p-2 ml-4 mr-2 hover:text-white text-green-500 hover:bg-green-500 focus:outline-none border rounded-md"
+                className="flex-none p-2 ml-4 mr-2 text-green-500 border rounded-md hover:text-white hover:bg-green-500 focus:outline-none"
                 onClick={() => {
                     if (todotext.current.value) {
                         dispatch((editTodo({ id, updatedTodoText: todotext.current.value })))
@@ -23,20 +23,18 @@ const TodoItem = ({ todo, todotext, setShowErrorMessage }) => {
                     else {
                         setShowErrorMessage(true)
                     }
-
                 }}
-
             >
-                <BsPencilFill className="h-6 w-6 " />
+                <BsPencilFill className="w-6 h-6 " />
             </button>
 
             <button
-                className="flex-none p-2 ml-2 text-red-500 hover:text-white hover:bg-red-500 focus:outline-none border rounded-md"
+                className="flex-none p-2 ml-2 text-red-500 border rounded-md hover:text-white hover:bg-red-500 focus:outline-none"
                 onClick={() => { dispatch((deleteTodo(id))) }}
             >
-                <TbCircleXFilled className="h-6 w-6" />
+                <TbCircleXFilled className="w-6 h-6" />
             </button>
-        </div>
+        </li>
     )
 }
 

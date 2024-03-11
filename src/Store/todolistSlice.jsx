@@ -7,11 +7,16 @@ export const todolistSlice = createSlice({
     initialState,
     reducers: {
         addTodo: (state, action) => {
-            let newItem = action.payload;
-            let uniqueId = uuidv4();
-            let updatedCount = 0;
-            let newTodo = { id: uniqueId, item: newItem, updatedCount };
-            return [...state, newTodo]
+            const { finalTodotext, todoItemsCount } = action.payload;
+            console.log(finalTodotext, todoItemsCount)
+            let newTodolist = []
+            for (let i = 0; i < todoItemsCount; i++) {
+                let uniqueId = uuidv4();
+                let updatedCount = 0;
+                let newTodo = { id: uniqueId, item: finalTodotext, updatedCount };
+                newTodolist.push(newTodo);
+            }
+            return [...state, ...newTodolist]
         },
 
         deleteTodo: (state, action) => {
