@@ -12,3 +12,7 @@
 
 ### Hosting
 Netlify : https://todolistpraveen.netlify.app
+
+### Start The Application
+`npm install`
+`npm run dev`

@@ -1,10 +1,10 @@
 
 
 import { useEffect, useRef, useState } from "react";
+
 import TodoItem from "../Components/TodoItem";
 
 // import { todolistHardData } from "./../Utils/todolistHardData"
-
 import { addTodo } from "../Store/todolistSlice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -16,7 +16,6 @@ const Todolist = () => {
     const dispatch = useDispatch()
     const todolist = useSelector((state) => state.todolist)
     console.log(todolist)
-
 
     useEffect(() => {
         if (showErrorMessage) {
@@ -55,7 +54,6 @@ const Todolist = () => {
                                         else {
                                             todoItemsCount = parseInt(lastItem)
                                         }
-
                                         const finalTodotext = todolistItems.join(" ")
                                         dispatch(addTodo({ finalTodotext, todoItemsCount }))
                                         todotext.current.value = ""
@@ -63,7 +61,6 @@ const Todolist = () => {
                                     else {
                                         setShowErrorMessage(true)
                                     }
-
                                 }}>
                                 Add Todo
                             </button>
@@ -76,7 +73,6 @@ const Todolist = () => {
                         {todotext && todolist.map((todo) => (
                             <TodoItem key={todo.id} todo={todo} todotext={todotext} setShowErrorMessage={setShowErrorMessage} />
                         ))}
-
                     </ul>
                 </div>
             </div>

@@ -1,8 +1,8 @@
+import { useDispatch } from 'react-redux'
+import { deleteTodo, editTodo } from '../Store/todolistSlice'
 
 import { BsPencilFill } from 'react-icons/bs'
 import { TbCircleXFilled } from 'react-icons/tb'
-import { useDispatch } from 'react-redux'
-import { deleteTodo, editTodo } from '../Store/todolistSlice'
 
 const TodoItem = ({ todo, todotext, setShowErrorMessage }) => {
     const { id, item, updatedCount } = todo
